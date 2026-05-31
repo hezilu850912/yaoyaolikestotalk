@@ -1,0 +1,17 @@
+.DS_Store
+
+# Raw confidential materials should not be committed unless explicitly anonymized.
+input/
+raw/
+private/
+confidential/
+
+# Generated exports
+*.docx
+*.pptx
+*.pdf
+
+# Secrets
+.env
+*.key
+*.pem
