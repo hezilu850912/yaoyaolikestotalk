@@ -39,6 +39,29 @@ The writing style should be:
 - Free of unnecessary procedural detail
 - Aligned with the customer training note
 
+## Length Budget
+
+Keep the output close to the user's good examples: short enough to paste into a customer FA table, but complete enough to show logic.
+
+Recommended length by section:
+
+- Issue: 1 concise title, usually 8-15 words.
+- Risk: 1 short line or color label with a brief reason if needed.
+- Description: 1-2 sentences, include date/station/failure rate/scope when available.
+- Customer Failure Mode: 1 sentence focused on end-user impact.
+- Failure Analysis: usually 4-6 numbered evidence sentences. Use more only when needed for complex multi-cause issues.
+- FA Logic Line: 1 compact chain, such as `A -> B -> C -> Root Cause`.
+- Supporting Branches: 1-3 branches maximum, only when they support key links or exclude major alternatives.
+- Root Cause(s): 1-2 concise paragraphs or bullets. Each cause should usually be 20-50 words.
+- Containment Action(s): 1-3 bullets.
+- Corrective Action(s): 1-4 bullets.
+- Preventive Action(s): 3-5 short bullets. Do not repeat Corrective Action details.
+- Next Steps & Dates: 1-3 bullets with DRI and checkpoint.
+- Factory Risk Assessment: 1-2 sentences, include numbers when available.
+- Field Exposure Risk Assessment: 1-2 sentences, include DPPM/CI/screening evidence when available.
+
+If the source material is long, compress it into the main logic and move extra details to `Missing / Need confirmation` or `Supporting Branches` only when useful.
+
 ## Required Sections
 
 Generate these sections when information is available:
@@ -126,12 +149,15 @@ Include available facts such as:
   - `Measured [parameter]; [value/trend] indicated [finding].`
   - `Verified [condition/hypothesis]; [result] supported or excluded [cause].`
 - Keep every FA sentence concise and evidence-based.
+- Use numbered FA sentences by default.
+- Keep FA to the main logic path: action/test + result/conclusion.
 - Avoid listing every procedural branch in the final customer report.
 - Extract the main logic line from all FA evidence, such as `A -> B -> C -> Root Cause`.
 - Keep side-branch FA evidence only when it supports a key link in the main logic line or excludes an important alternative cause.
 - If one conclusion requires multiple supporting branches, express it as combined evidence, such as `A -> B` and `D -> B`.
 - If external research is allowed by the user, use it only to supplement technical reasoning, identify plausible mechanisms, or check whether a logic link is reasonable. External research must not replace actual FA evidence.
-- Output a logic map or Mermaid flowchart when FA logic is complex.
+- Always output a compact FA logic line when FA is generated.
+- Output a Mermaid flowchart when FA logic is complex or when the user requests a logic map.
 
 ### Root Cause(s) / Leading Hypothesis
 

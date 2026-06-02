@@ -12,6 +12,29 @@ It should use:
 
 The target style is practical factory-engineer English: simple, clear, evidence-based, and easy for customer SQE teams to understand. Do not over-polish into vague consulting language.
 
+## Length Budget
+
+The final report should look like the user's good examples: compact table-ready content, not a long essay.
+
+Recommended length:
+
+- Issue: 1 concise title, usually 8-15 words.
+- Risk: 1 short line or color label with a brief reason if needed.
+- Description: 1-2 sentences with date, station, failure rate, and scope when available.
+- Customer Failure Mode: 1 sentence focused on customer/end-user impact.
+- Failure Analysis: usually 4-6 numbered sentences. Each sentence should be `action/test + result/conclusion`.
+- FA Logic Line: 1 compact chain, such as `A -> B -> C -> Root Cause`.
+- Supporting Branches: 1-3 branches maximum, only for key support or exclusion evidence.
+- Root Cause: 1-2 concise bullets or paragraphs. Each cause should usually be 20-50 words.
+- Containment Action: 1-3 bullets.
+- Corrective Action: 1-4 bullets.
+- Preventive Action: 3-5 short bullets.
+- Next Steps & Dates: 1-3 bullets with DRI and checkpoint.
+- Factory Risk Assessment: 1-2 sentences with numbers when available.
+- Field Exposure Risk Assessment: 1-2 sentences with DPPM, CI, inspection coverage, or field data when available.
+
+When source materials are long, compress the content into the main evidence chain. Do not copy all side branches into the customer report.
+
 ## 1. Input Collection
 
 Accepted source materials:
@@ -125,6 +148,16 @@ Use `burr` only when the defect is a physical burr from molding, cutting, stampi
 
 Failure Analysis should use concise fixed-format evidence statements.
 
+Default FA format:
+
+```text
+1. [Action/test/review]; [result/conclusion].
+2. [Action/test/review]; [result/conclusion].
+3. [Action/test/review]; [result/conclusion].
+```
+
+Keep FA as a logic path, not a full process record.
+
 Preferred sentence patterns:
 
 ```text
@@ -203,6 +236,8 @@ A -> B
 D -> B
 B -> C -> Root Cause
 ```
+
+Always generate a compact FA logic line after FA when the report is being drafted. Generate a Mermaid flowchart when the issue has multiple evidence branches, multiple root causes, or when the user requests a logic map.
 
 ## 8. Branch Filtering
 
