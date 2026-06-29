@@ -1,6 +1,6 @@
 # yaoyaolikestotalk
 
-FA report assistant project for converting PDF, JIRA exports, PPT, Excel files, images, and manual notes into concise customer-ready FA report sections.
+FA and 8D report assistant project for converting PDF, JIRA exports, PPT, Excel files, images, and manual notes into concise customer-ready report sections.
 
 ## Core Idea
 
@@ -8,6 +8,7 @@ The assistant should generate report sections based on source evidence and the c
 
 - Extract useful evidence from input files.
 - Generate standard FA report sections in Markdown.
+- Generate company-style 8D reports in Markdown.
 - Write Failure Analysis in concise fixed-format evidence sentences.
 - Build a main FA logic chain such as `A -> B -> C -> Root Cause`.
 - Keep side-branch FA evidence only when it supports a key logic link or excludes an important alternative cause.
@@ -18,8 +19,11 @@ The assistant should generate report sections based on source evidence and the c
 
 - `customer_training_issue_dri_jira_notes.md`: raw extracted customer training notes.
 - `prompts/section_generation_prompt.md`: main prompt for generating standard report sections.
+- `prompts/yaoyao_like_to_talk_8d_prompt.md`: company-style 8D report prompt.
 - `templates/standard_fa_report.md`: Markdown output template for generated reports.
+- `templates/company_8d_report_template.md`: Markdown output template for D1-D7 8D reports.
 - `docs/input_to_report_workflow.md`: workflow from input materials to report output.
+- `docs/company_8d_report_workflow.md`: workflow from input materials to company-style 8D output.
 - `examples/fa_logic_demo_arrow_burr.md`: demo showing FA logic chain and flowchart.
 
 ## Expected Output
@@ -34,3 +38,17 @@ Default output should be a Markdown report containing:
 - Mermaid flowchart.
 
 Final customer deliverables may later be exported to Word, PDF, or PPT.
+
+## 8D Output
+
+The company-style 8D module outputs:
+
+- D1 Team Building
+- D2 Problem Description
+- D3 Containment Action
+- D4 Root Cause Analysis
+- D5 Corrective Action
+- D6 Verification / Effectiveness Check
+- D7 Preventive Action
+- FA Logic Line and optional Mermaid flowchart
+- Missing / Need Confirmation questions
